@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "IoT-Master1",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 15.6,
+      "left": -159.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -143.7,
+      "left": 13.8,
+      "attrs": { "temperature": "25.2", "humidity": "83" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 99.95,
+      "left": -105.6,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "h-28.8", "v57.6" ] ],
+    [ "dht1:SDA", "esp:18", "green", [ "v19.2", "h124.9", "v115.2" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "h57.7", "v57.6" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:25", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

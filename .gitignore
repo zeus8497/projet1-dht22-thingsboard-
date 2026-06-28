@@ -1,0 +1,5 @@
+secrets.h
+data/.last_index
+__pycache__/
+*.pyc
+.venv/
