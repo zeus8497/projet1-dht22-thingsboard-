@@ -18,5 +18,3 @@ python scripts/send_simulated_data.py --reset
 
 Importer le dossier, ajouter `secrets.h`, lancer la simulation.  
 Le firmware lit le **DHT22** et envoie par **MQTT**.
-
-Documentation : `readme/README_chapitre3.md`
